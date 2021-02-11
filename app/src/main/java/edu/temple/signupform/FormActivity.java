@@ -24,7 +24,20 @@ public class FormActivity extends AppCompatActivity {
         TextView wpas = findViewById(R.id.inv2);
 
         Button button = findViewById(R.id.button1);
-
+        button.setOnClickListener(v -> {
+            if(name.getText().toString().equals("admin") && pass.getText().toString().equals("admin")){
+                Toast.makeText(FormActivity.this,
+                        "WELCOME, "+name.getText().toString(),
+                        Toast.LENGTH_SHORT).show();
+                wuse.setVisibility(View.INVISIBLE);
+                wpas.setVisibility(View.INVISIBLE);
+            }else{
+                wuse.setText("WRONG INPUTS");
+                wpas.setText("WRONG INPUTS");
+                wuse.setVisibility(View.VISIBLE);
+                wpas.setVisibility(View.VISIBLE);
+            }
+        });
     }
 
 }
